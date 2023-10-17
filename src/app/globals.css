@@ -7,10 +7,14 @@
   --dark: #1E222D;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: var(--light);
-  /* background: var(--dark); */
+.dark-mode{
+  background: var(--dark) !important;
+  color: white !important;
+}
+
+.light-mode{
+  background:var(--light)!important ;
+  color: black!important;
 }
 
 /* setting width for children */

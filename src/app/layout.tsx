@@ -26,12 +26,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <main>
-          <Sidebar />
+          {/* <Sidebar /> */}
           <div className="children-wrapper ml-[22rem] ">
-            <Navbar/>
+            {/* <Navbar/> */}
             {children}
             {/* footer */}
-            <Footer/>
+            {/* <Footer/> */}
           </div>
         </main>
       </body>

@@ -13,7 +13,7 @@ import { RxDashboard } from 'react-icons/rx'
 const Sidebar = () => {
     const path = usePathname();
   return (
-    <div className="container fixed top-0 z-50 py-8 w-[20.125rem] h-screen bg-[#FFF] rounded-tr-[2.5rem] rounded-br-[2.5rem]">
+    <div className="container fixed top-0 z-30 py-8 w-[20.125rem] h-screen bg-[#FFF] rounded-tr-[2.5rem] rounded-br-[2.5rem]">
       {/* wrapper */}
       <div className="wrapper flex flex-col justify-between items-center w-full h-full">
         <div className="logoTabs flex flex-col gap-8">
