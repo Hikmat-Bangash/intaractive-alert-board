@@ -1,25 +1,40 @@
 "use client";
 import Image from "next/image";
-import React, {useState} from "react";
+import React, { Dispatch, useEffect, useState } from "react";
 import searchIcon from "../../public/assets/icons/search.svg";
-import Avatar from "../../public/assets/icons/Avatar.png";
 import userpic from "../../public/userpic.jpg";
-// below are the react-icons 
+// below are the react-icons
 import Badge from "@mui/material/Badge";
-import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
-import { MdOutlineLightMode } from "react-icons/md"
-import { CiDark } from "react-icons/ci"
-  import { GoBell } from "react-icons/go";
+import { MdOutlineLightMode } from "react-icons/md";
+import { CiDark } from "react-icons/ci";
+import { GoBell } from "react-icons/go";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+import { changeMode } from "@/redux/features/ThemeChange";
+import { useDispatch } from "react-redux";
+import { AnyAction } from "@reduxjs/toolkit";
 
-type Props = {};
-
-const Navbar = (props: Props) => {
-  const [LightMode, setLightMode] = useState<boolean>(true);
-
+const Navbar = () => {
+  const { isLightMode }:any = useSelector((state: RootState)=>state?.ThemeMode)
+  const dispatch:Dispatch<AnyAction> = useDispatch();
+  // ------- A function that change dark/light mode --------
+  const ChangeThemeMode = () => {
+     dispatch(changeMode(!isLightMode))
+  };
+  // Add or remove the appropriate class when LightMode changes
+  useEffect(() => {
+    if (isLightMode) {
+      document.body.classList.remove("dark-mode");
+      document.body.classList.add("light-mode");
+    } else {
+      document.body.classList.remove("light-mode");
+      document.body.classList.add("dark-mode");
+    }
+  }, [isLightMode]);
 
   // JSX Section
   return (
-    <div className="container w-[75%] fixed top-6 bgColor z-50">
+    <div className="container w-[75%] fixed top-6 z-50">
       <div className="wrapper flex justify-between items-center ">
         {/* search bar */}
         <div className="searchbar w-[30rem] h-[3.5rem] rounded-[0.93rem] bg-white flex gap-4 items-center px-6">
@@ -36,7 +51,7 @@ const Navbar = (props: Props) => {
             name="search"
             id="search"
             placeholder="Find symbols, bonds, indices, etc..."
-            className="text-[1rem] w-[24rem] outline-none"
+            className="text-[1rem] text-black w-[24rem] outline-none"
           />
         </div>
 
@@ -44,11 +59,11 @@ const Navbar = (props: Props) => {
         <div className="righSectionWrapper flex justify-between items-center gap-4 w-[20rem] h-[3.5rem]">
           {/* theme mode */}
           <div
-            onClick={(e) => setLightMode(!LightMode)}
-            className="themeMode cursor-pointer w-[2.6rem] h-[2.6rem] bg-[#467DCE] flex justify-center items-center rounded-full"
+            onClick={ChangeThemeMode}
+            className="themeMode cursor-pointer w-[2.6rem] h-[2.6rem] bg-[#467DCE] flex justify-center items-center rounded-full text-white"
           >
             <span className="text-2xl">
-              {LightMode ? <MdOutlineLightMode /> : <CiDark />}
+              {!isLightMode ? <MdOutlineLightMode /> : <CiDark />}
             </span>
           </div>
           {/* notification */}
@@ -74,4 +89,3 @@ const Navbar = (props: Props) => {
 };
 
 export default Navbar;
-
