@@ -1,15 +1,25 @@
-import React from 'react'
+"use client";
+import { RootState } from "@/redux/store";
+import React from "react";
+import { useSelector } from "react-redux";
 
-type Props = {}
+type Props = {};
 
-const page = (props: Props) => {
+const Page = (props: Props) => {
+
+  const { isLightMode }: any = useSelector(
+    (state: RootState) => state?.ThemeMode
+  );
   return (
     <main className="flex min-h-screen mt-[9rem]">
-      <div className="wrapper w-[97.5%] h-[46rem] bg-green-500">
-        <h1 className="text-white">This is Plan section</h1>
+      <div
+        className={`wrapper w-[97.5%] h-[46rem] ${isLightMode ? "bg-white text-black" : "bg-[#131722] text-white"
+        } rounded-[0.9rem] flex justify-center`}
+      >
+        <h1 className=" font-bold">This is PLAN section</h1>
       </div>
     </main>
   );
-}
+};
 
-export default page
+export default Page;

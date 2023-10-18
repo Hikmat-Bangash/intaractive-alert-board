@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { Providers } from "../redux/Provider"
+
 
 const poppins = Poppins({
   weight: ["400", "700"],
@@ -25,15 +27,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <main>
-          {/* <Sidebar /> */}
-          <div className="children-wrapper ml-[22rem] ">
-            {/* <Navbar/> */}
-            {children}
-            {/* footer */}
-            {/* <Footer/> */}
-          </div>
-        </main>
+        <Providers>
+          <main>
+            <Sidebar />
+            <div className="children-wrapper ml-[22rem] ">
+              <Navbar />
+              {children}
+              {/* footer */}
+              <Footer />
+            </div>
+          </main>
+        </Providers>
       </body>
     </html>
   );

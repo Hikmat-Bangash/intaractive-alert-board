@@ -10,18 +10,18 @@
 .dark-mode{
   background: var(--dark) !important;
   color: white !important;
+  transition: all;
+  transition-duration: 500ms; 
 }
 
 .light-mode{
   background:var(--light)!important ;
   color: black!important;
+  transition: all;
+  transition-duration: 500ms; 
 }
 
 /* setting width for children */
 .calc-width {
 width: calc(100vw - 16.8rem);
-}
-
-.bgColor {
-  background:linear-gradient(105deg, #EDF4FF 20.03%, #F5F5F5 91.95%)
 }
