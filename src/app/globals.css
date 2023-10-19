@@ -25,3 +25,20 @@
 .calc-width {
 width: calc(100vw - 16.8rem);
 }
+
+/* For Webkit Browsers (Chrome, Safari) */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #467DCE gray;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #467DCE;
+  border-radius: 6px;
+}
+
+

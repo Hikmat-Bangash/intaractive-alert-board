@@ -1,6 +1,13 @@
+"use client";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react'
-  import { BiMessageRoundedDetail } from "react-icons/bi";
+import { BiMessageRoundedDetail } from "react-icons/bi";
+  
 const Footer = () => {
+  const path = usePathname();
+  
+  // JSX SECTION
     return (
       <div className="container w-[97.5%] mt-[2rem] h-[4.8rem] ">
         <div className="wrapper flex justify-between">
@@ -19,9 +26,11 @@ const Footer = () => {
             <span className=" text-[1.8rem]">
               <BiMessageRoundedDetail />
             </span>
-            <p className="text-[1rem] font-bold tracking-[0.26rem]">
-              AI ADVISOR
-            </p>
+            <Link href="/aiadvisor">
+              <p className="text-[1rem] font-bold tracking-[0.26rem]">
+                {path == "/aiadvisor" ? "MINIMIZE" : "AI ADVISOR"}
+              </p>
+            </Link>
           </div>
         </div>
       </div>

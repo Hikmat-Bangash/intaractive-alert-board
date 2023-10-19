@@ -12,7 +12,7 @@ const Page = (props: Props) => {
    return (
      <main className="flex min-h-screen mt-[9rem]">
        <div
-         className={`"wrapper w-[97.5%] h-[46rem] ${
+         className={`"wrapper w-[98%] h-[46rem] ${
            isLightMode ? "bg-white text-black" : "bg-[#131722] text-white"
          } rounded-[0.9rem] flex justify-center"`}
        >
