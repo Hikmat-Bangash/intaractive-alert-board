@@ -13,6 +13,7 @@ import { RootState } from "@/redux/store";
 import { changeMode } from "@/redux/features/ThemeChange";
 import { useDispatch } from "react-redux";
 import { AnyAction } from "@reduxjs/toolkit";
+import Link from "next/link";
 
 const Navbar = () => {
   const { isLightMode }:any = useSelector((state: RootState)=>state?.ThemeMode)
@@ -34,7 +35,11 @@ const Navbar = () => {
 
   // JSX Section
   return (
-    <div className="container w-[75%] fixed top-6 z-50">
+    <div
+      className={`container w-[75.5%] fixed top-6 z-50 ${
+        isLightMode ? "bg-white" : "bg-[#1E222D]"
+      } `}
+    >
       <div className="wrapper flex justify-between items-center ">
         {/* search bar */}
         <div className="searchbar w-[30rem] h-[3.5rem] rounded-[0.93rem] bg-white flex gap-4 items-center px-6">
@@ -56,7 +61,7 @@ const Navbar = () => {
         </div>
 
         {/* right section */}
-        <div className="righSectionWrapper flex justify-between items-center gap-4 w-[20rem] h-[3.5rem]">
+        <div className="righSectionWrapper flex justify-between items-center gap-4 w-[20rem] h-[3.5rem] mr-5">
           {/* theme mode */}
           <div
             onClick={ChangeThemeMode}
@@ -68,17 +73,19 @@ const Navbar = () => {
           </div>
           {/* notification */}
           <div className="themeMode w-[2.43rem] h-[2.43rem] flex justify-center items-center rounded-full">
-            <Badge badgeContent={4} color="error">
+            <Badge badgeContent={4} color="error" className="cursor-pointer">
               <GoBell className="text-3xl" />
             </Badge>
           </div>
           {/* usernae + avatar */}
           <div className="user-avatar  flex items-center gap-3">
-            <Image
-              src={userpic}
-              className="w-[3rem] h-[3rem] rounded-full object-cover"
-              alt="avatar"
-            />
+            <Link href="/profile">
+              <Image
+                src={userpic}
+                className="w-[3rem] h-[3rem] rounded-full object-cover cursor-pointer"
+                alt="avatar"
+              />
+            </Link>
             {/* name */}
             <h3 className="text-[1rem] font-bold">Jane Doe</h3>
           </div>

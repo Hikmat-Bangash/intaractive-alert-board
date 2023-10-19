@@ -15,7 +15,7 @@ export default function Home() {
  );
   return (
     <main className="flex  mt-[9rem] w-full ">
-      <div className="wrapper w-[71.2rem] flex flex-col justify-between gap-[1rem]">
+      <div className="wrapper w-[98%] flex flex-col justify-between gap-[1rem]">
         {/* Market view and Technical Tabs */}
         <div className="Tabs relative w-full h-[3rem] capitalize">
           <div className="wrapper w-full flex gap-[4rem] ml-6 text-[0.875rem] font-bold capitalize">

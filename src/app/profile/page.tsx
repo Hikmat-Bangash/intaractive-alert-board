@@ -16,17 +16,19 @@ const Page = () => {
   const UpdataUserInfo = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
   }
+
+  // JSX Section
    return (
      <main
        className={` ${
          isLightMode ? "text-black" : "text-white"
        } mt-[9rem] w-full`}
      >
-       <div className="wrapper flex flex-col gap-6 w-[71.2rem] ">
+       <div className="wrapper flex flex-col gap-6 w-[98%] ">
          {/* user plan section Top Section */}
          <div
            className={`wrapper w-full  h-[9rem] px-8 ${
-             isLightMode ? "bg-white text-white" : "bg-[#131722] text-white"
+             isLightMode ? "bg-white " : "bg-[#131722]"
            } flex justify-between items-center rounded-[0.93rem]`}
          >
            {/* userpic and name Left section */}
@@ -40,7 +42,11 @@ const Page = () => {
              <div className="wraper flex flex-col gap-2">
                <h3 className="text-[1rem] font-bold">Jane Doe</h3>
                {/* account plan */}
-               <div className="accountPlan w-[10rem] h-[1.5rem] bg-[#EFEFEF] rounded-[2.5rem] text-[0.75rem] font-bold tracking-[0.195rem] text-[#467DCE] flex justify-center items-center">
+               <div
+                 className={`accountPlan w-[10rem] h-[1.5rem] ${
+                   isLightMode ? "bg-[#EFEFEF] " : "bg-[#1E222D]"
+                 } rounded-[2.5rem] text-[0.75rem] font-bold tracking-[0.195rem] text-[#467DCE] flex justify-center items-center`}
+               >
                  PLAN: PREMIUM
                </div>
              </div>
@@ -62,7 +68,7 @@ const Page = () => {
          <section className={`flex justify-between w-full  `}>
            {/* Edit Information */}
            <div
-             className={`userInfo flex flex-col gap-10 w-[42.8rem] h-[47.8rem] p-8 rounded-[0.93rem] ${
+             className={`userInfo flex flex-col gap-10 w-[65%] h-[47.8rem] p-8 rounded-[0.93rem] ${
                isLightMode ? "bg-white text-black" : "bg-[#131722] text-white"
              } `}
            >
@@ -207,7 +213,7 @@ const Page = () => {
 
            {/* -------- RIGHT SECTIION / UPLOADING PROFILE PIC  */}
            <div
-             className={`"userInfo w-[20.8rem] h-[30.4rem] flex flex-col gap-6  p-8  rounded-[0.93rem]" ${
+             className={`userInfo w-[28.7%] h-[30.4rem] flex flex-col gap-6  p-8  rounded-[0.93rem] ${
                isLightMode ? "bg-white text-black" : "bg-[#131722] text-white"
              }`}
            >
@@ -217,11 +223,11 @@ const Page = () => {
              {/* img uploading icon contianer */}
              <div className="container flex flex-col gap-4">
                <div
-                 className={`"btnContainer w-[16.8125rem] p-4 h-[14.6875rem] rounded-[0.9375rem] ${
+                 className={`btnContainer w-[16.8125rem] p-4 h-[14.6875rem] rounded-[0.9375rem] ${
                    isLightMode
                      ? "bg-[#F0F6FF] text-black"
                      : "bg-[#1E222D] text-white"
-                 }  flex flex-col justify-around items-center cursor-pointer"`}
+                 }  flex flex-col justify-around items-center cursor-pointer`}
                >
                  {/* icon */}
                  <div className="icon text-[8.5rem]">
