@@ -55,7 +55,6 @@ export default function Home() {
           </div>
         ) : (
             <div className="cryptoView w-full flex justify-center items-center">
-              {/* <h1 className="text-[1.5rem] font-bold">My Calendar</h1> */}
             <CryptoTechnicalView />
           </div>
         )}

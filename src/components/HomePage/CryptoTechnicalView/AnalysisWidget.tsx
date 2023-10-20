@@ -16,7 +16,7 @@ const AnalysisWidget: React.FC = () => {
 
           script.innerHTML = JSON.stringify({
             interval: "1m",
-            width: 425,
+            width: 445,
             isTransparent: false,
             height: 450,
             symbol: "NASDAQ:AAPL",

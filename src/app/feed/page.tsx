@@ -26,9 +26,11 @@ const Page = (props: Props) => {
            </div>
          </div>
 
-         <div className="RightSection w-[36rem] h-full bg-white flex p-8 rounded-[0.9rem]">
+         <div className="RightSection w-[36rem] h-auto border border-r-red-900 bg-white flex flex-col gap-4 p-8 rounded-[0.9rem]">
+           
+           <h1 className="text-black font-bold text-[1.5rem]">My Calendar</h1>
            {/* economical component calling */}
-           <div className="wrapper w-[26rem] h-[31.2rem]">
+           <div className="wrapper w-[26rem] h-[25.2rem]">
              <EconomicalCalendar />
            </div>
          </div>

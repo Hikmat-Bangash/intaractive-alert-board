@@ -38,8 +38,8 @@ const EconomicalCalendar: React.FC = () => {
 
   return (
     <div className="tradingview-widget-container w-full">
+
       <div className="tradingview-widget-container_Analysis w-full"></div>
-      
     </div>
   );
 };
