@@ -54,7 +54,9 @@ export default function Home() {
             <MarketData />
           </div>
         ) : (
-          <CryptoTechnicalView />
+            <div className="cryptoView w-full flex justify-center items-center">
+            <CryptoTechnicalView />
+          </div>
         )}
       </div>
     </main>

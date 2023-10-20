@@ -37,7 +37,7 @@ const Navbar = () => {
   return (
     <div
       className={`container w-[75.5%] fixed top-6 z-50 ${
-        isLightMode ? "bg-white" : "bg-[#1E222D]"
+        isLightMode ? "bg-[#F0F6FF]" : "bg-[#1E222D]"
       } `}
     >
       <div className="wrapper flex justify-between items-center ">
