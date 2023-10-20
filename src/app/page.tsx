@@ -54,7 +54,10 @@ export default function Home() {
             <MarketData />
           </div>
         ) : (
-          <CryptoTechnicalView />
+            <div className="cryptoView w-full flex justify-center items-center">
+              {/* <h1 className="text-[1.5rem] font-bold">My Calendar</h1> */}
+            <CryptoTechnicalView />
+          </div>
         )}
       </div>
     </main>

@@ -3,6 +3,7 @@ import { RootState } from '@/redux/store';
 import React from 'react'
 import { useSelector } from 'react-redux';
 import MarketOverview from './MarketOverview';
+import AnalysisWidget from './AnalysisWidget';
 
 const CryptoTechnicalView = () => {
     
@@ -17,16 +18,18 @@ const CryptoTechnicalView = () => {
           isLightMode ? "bg-white" : "bg-[#131722]"
         }   text-red-500 rounded-[0.937rem]`}
       >
-        <MarketOverview/>
+        <MarketOverview />
       </div>
+
       {/* Right crypto section */}
       <div
         className={`wrapper w-[35.5rem] h-[37.7rem] p-4 ${
           isLightMode ? "bg-white" : "bg-[#131722]"
-        }  text-blue-500 rounded-[0.937rem]`}
+        }  text-blue-500 rounded-[0.937rem] flex items-center`}
       >
-        <h1>Right crypto section</h1>
+        <AnalysisWidget />
       </div>
+
     </div>
   );
 }
